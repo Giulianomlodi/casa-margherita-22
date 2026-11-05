@@ -1,0 +1,184 @@
+{
+  "P06": {
+    "title": "Casa famiglia con salotto rialzato",
+    "short": "Salotto rialzato",
+    "base": 2,
+    "deck": [
+      224,
+      498,
+      93,
+      97
+    ],
+    "flight": [
+      245,
+      498,
+      1,
+      7,
+      0.27,
+      0.9
+    ],
+    "level": 1.26,
+    "depth": 0.16,
+    "upperTarget": 2.7,
+    "upperUse": "Salotto di lettura",
+    "below": "Cassettoni e vani chiusi",
+    "garden": "Giardino invernale intero",
+    "garage": "G-B · banco e biciclette",
+    "description": "Due camere sulla piazza e due servizi. Il tavolo guarda il giardino chiuso. Sette alzate portano a un salotto raccolto, con cassetti accessibili dal pavimento principale.",
+    "dining": [
+      216,
+      279,
+      78,
+      34
+    ],
+    "couch": null,
+    "upperSeat": [
+      292,
+      561
+    ],
+    "office": false,
+    "upperDesk": false,
+    "upperCam": [
+      246,
+      535,
+      2.8
+    ],
+    "upperAim": [
+      299,
+      573,
+      2.26
+    ],
+    "stairCam": [
+      206,
+      459,
+      1.6
+    ],
+    "stairAim": [
+      281,
+      555,
+      1.65
+    ]
+  },
+  "P07": {
+    "title": "Casa atelier con archivio alto",
+    "short": "Archivio dell’atelier",
+    "base": 3,
+    "deck": [
+      251,
+      326,
+      84,
+      104
+    ],
+    "flight": [
+      279,
+      430,
+      -1,
+      15,
+      0.27,
+      0.9
+    ],
+    "level": 2.62,
+    "depth": 0.22,
+    "upperTarget": 2.0,
+    "upperUse": "Archivio accessorio",
+    "below": "Armadi e campionari",
+    "garden": "Giardino invernale intero",
+    "garage": "G-B · banco e campioni",
+    "description": "Una camera sulla piazza, atelier per due al retro e soggiorno al centro. Una scala laterale arriva a un archivio accessorio sopra la fascia dei campionari. Lo sbarco è il primo punto da misurare.",
+    "dining": [
+      175,
+      555,
+      60,
+      31
+    ],
+    "couch": [
+      183,
+      511,
+      90
+    ],
+    "upperSeat": null,
+    "office": true,
+    "upperDesk": false,
+    "upperCam": [
+      293,
+      408,
+      3.65
+    ],
+    "upperAim": [
+      276,
+      342,
+      3.18
+    ],
+    "stairCam": [
+      226,
+      594,
+      1.6
+    ],
+    "stairAim": [
+      292,
+      392,
+      2.7
+    ]
+  },
+  "P08": {
+    "title": "Casa con studio sopra il pranzo",
+    "short": "Studio sul ballatoio",
+    "base": 4,
+    "deck": [
+      156,
+      481,
+      162,
+      113
+    ],
+    "flight": [
+      279,
+      481,
+      1,
+      17,
+      0.26,
+      0.9
+    ],
+    "level": 2.94,
+    "depth": 0.24,
+    "upperTarget": 2.7,
+    "upperUse": "Studio abituale condizionato",
+    "below": "Sala da pranzo",
+    "garden": "Giardino invernale intero",
+    "garage": "G-A · autorimessa essenziale",
+    "description": "Suite sulla piazza, cucina separata e soggiorno vicino al verde. Il pranzo occupa la parte inferiore del ballatoio. Lo studio superiore è uno scenario limite che richiede 5,64 m nello schema di prova.",
+    "dining": [
+      193,
+      519,
+      70,
+      33
+    ],
+    "couch": [
+      224,
+      277,
+      0
+    ],
+    "upperSeat": null,
+    "office": false,
+    "upperDesk": true,
+    "upperCam": [
+      280,
+      551,
+      3.79
+    ],
+    "upperAim": [
+      190,
+      503,
+      3.62
+    ],
+    "stairCam": [
+      225,
+      299,
+      1.6
+    ],
+    "stairAim": [
+      284,
+      501,
+      2.52
+    ]
+  }
+}

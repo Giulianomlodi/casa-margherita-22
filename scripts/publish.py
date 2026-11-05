@@ -70,6 +70,7 @@ seal("pdf", (ROOT / "Casa_Margherita_22.pdf").read_bytes())
 atlas = ROOT / "Atlante_3D"
 seal("atlante", (atlas / "index.html").read_bytes())
 seal("album", (atlas / "Album_render.pdf").read_bytes())
+seal("soppalchi", (atlas / "Case_e_soppalchi.pdf").read_bytes())
 for asset in sorted(atlas.rglob("*")):
     if asset.is_file() and asset.suffix.lower() in {".webp", ".ifc", ".glb", ".blend"}:
         relative_name = asset.relative_to(atlas).as_posix()

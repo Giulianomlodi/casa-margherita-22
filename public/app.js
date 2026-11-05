@@ -5,6 +5,7 @@ const statusLine = document.querySelector("#status");
 const viewer = document.querySelector("#viewer");
 const notice = document.querySelector("#notice");
 const fileInfo = {
+  soppalchi: ["Casa_Margherita_22_Case_e_soppalchi.pdf", "application/pdf"],
   album: ["Casa_Margherita_22_Album_render.pdf", "application/pdf"],
   pdf: ["Casa_Margherita_22.pdf", "application/pdf"],
   progetto: ["Casa_Margherita_22_Progetto.zip", "application/zip"],
@@ -79,6 +80,8 @@ window.margheritaAsset = async function(relative) {
   return decryptResource("v3/"+key, projectKey);
 };
 
+window.margheritaMezzBook=button=>download("soppalchi",button);
+
 function mount(html, onLoad) {
   const currentRoute=++route;
   viewer.onload=()=>{
@@ -101,6 +104,7 @@ function showDossier() {
     for(const link of doc.querySelectorAll("[data-atlante]")){
       link.addEventListener("click",e=>{e.preventDefault();savedScroll=viewer.contentWindow.scrollY;showAtlas(link.dataset.atlante);});
     }
+    for(const link of doc.querySelectorAll("[data-mezzbook]")){link.addEventListener("click",e=>{e.preventDefault();download("soppalchi",link);});}
     for(const link of doc.querySelectorAll("[data-album]")){
       link.addEventListener("click",e=>{e.preventDefault();download("album",link);});
     }
@@ -113,7 +117,7 @@ async function showAtlas(id) {
   try {
     notice.hidden=false;notice.textContent="Apertura dell’atlante 3D…";
     if(!atlasHtml)atlasHtml=new TextDecoder().decode(await decryptResource("atlante",projectKey));
-    window.margheritaVersion=/^(?:P0[0-5]|G00|G01|GA|GB)$/.test(id)?id:"P02";
+    window.margheritaVersion=/^(?:P0[0-8]|G00|G01|GA|GB)$/.test(id)?id:"P02";
     history.replaceState(null, "", "#k="+accessToken+"&view=3d&versione="+window.margheritaVersion);
     mount(atlasHtml,()=>{notice.hidden=true;});
   } catch {notice.textContent="Impossibile aprire l’atlante. Riprova.";}

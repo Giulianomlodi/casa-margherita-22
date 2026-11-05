@@ -18,3 +18,7 @@ blender -b --factory-startup --python-exit-code 11 -P scripts/scene.py
 `npm install` e `npm run build:viewer` ricostruiscono il visualizzatore Three.js. `python scripts/catalog.py` genera il catalogo, le miniature, le prospettive estratte dai panorami e l'HTML offline, usando OpenCV, Pillow e NumPy. Le immagini d'atmosfera approvate si trovano in `Atlante_3D/atmosfere/`. `python scripts/album.py` impagina il PDF con ReportLab e i caratteri Georgia e Segoe UI installati su Windows.
 
 La libreria locale `cache/archai.blend` contiene le sedici mesh di arredo e vegetazione riutilizzate da ARCHAI. I crediti delle texture e del motore grafico sono in `Atlante_3D/LEGGIMI.txt`. Per cifrare i materiali con la chiave del progetto e aggiornare Netlify, usare il comando di pubblicazione indicato nel README principale.
+
+### Proposte con soppalchi
+
+Per P06–P08 il file `scripts/mezzanines.json` definisce posizione, scala, quota finita, spessore e arredi del piano alto. `scripts/mezzanine.py` li integra nella scena dell’intero appartamento. Per rigenerare SVG e DXF usare `python soppalchi/plates.py` con ezdxf. `python soppalchi/book.py` genera l’impaginato HTML del quaderno per stampa A3 orizzontale.

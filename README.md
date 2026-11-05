@@ -22,3 +22,7 @@ Nel portale aprire **Render e 3D**. Il link di accesso già consegnato apre anch
 L’atlante comprende lo stato attuale dell’appartamento, cinque proposte e le quattro configurazioni del garage. Per ogni variante sono disponibili il modello GLB con materiali, lo scambio IFC4 e la scena Blender modificabile con camere, luci e texture incorporate. Le immagini d’atmosfera sono contrassegnate e affiancabili alle fotografie di riferimento. Il tour panoramico permette di guardarsi attorno da cinque punti, sia di giorno sia di sera. Nel confronto si accostano solo viste con la stessa posizione e direzione della fotocamera.
 
 Le istruzioni di riproduzione sono in `Sorgenti_3D/README.md`. Il processo di pubblicazione cifra anche modelli, album e immagini. Gli URL pubblici servono i materiali in forma cifrata. L’archivio completo del progetto include l’atlante offline e le scene native.
+
+## Tre case, due quote — R03
+
+L’atlante comprende anche P06, P07 e P08. Le tre distribuzioni integrali della casa hanno un nuovo livello raggiunto da una scala. Per ciascuna si consultano due piante, una sezione quotata, la configurazione completa in 3D e i render dai due livelli. Il quaderno dedicato è in `Atlante_3D/Case_e_soppalchi.pdf`. I modelli IFC classificano i componenti del nuovo livello e identificano il numero di alzate della relativa scala.

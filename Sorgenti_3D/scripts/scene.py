@@ -9,7 +9,8 @@ DATA=json.loads((ROOT/'scripts/geometry.json').read_text())
 S=.0254
 SCHEME=os.environ.get('CM_SCHEME','P02')
 BOX=SCHEME.startswith('G')
-N={'G00':0,'GA':1,'GB':2,'G01':3}[SCHEME] if BOX else int(SCHEME[1:])
+MEZZ=json.loads((ROOT/'scripts/mezzanines.json').read_text(encoding='utf-8-sig')).get(SCHEME)
+N={'G00':0,'GA':1,'GB':2,'G01':3}[SCHEME] if BOX else (MEZZ['base'] if MEZZ else int(SCHEME[1:]))
 bpy.ops.wm.read_factory_settings(use_empty=True)
 scene=bpy.context.scene
 scene.unit_settings.system='METRIC'
@@ -420,6 +421,11 @@ if BOX:garage()
 else:
  make_house()
  joinery_detail()
+ if MEZZ:
+  import sys
+  sys.path.insert(0,str(ROOT/'scripts'))
+  from mezzanine import build_mezzanine
+  build_mezzanine(globals(),MEZZ)
 context()
 # Local texture and shader detail. The geometry exported below and all camera renders share objects.
 def colour_bs(m):
@@ -479,6 +485,9 @@ if N==2 and not BOX:stops['angolo']=('Camera singola',(341,971,1.56),(310,860,1.
 if N==4 and not BOX:stops['servizi']=('Dispensa in quota',(101,421,1.50),(103,547,2.15))
 if N==5 and not BOX:stops['soglia']=('Camera sul giardino',(207,396,1.57),(286,266,1.36))
 if BOX:stops={'accesso':('Ingresso dal vicolo',(289,145,1.61),(161,371,1.62)),'archi':('Archi e pilastro',(312,404,1.60),(163,218,1.89)),'banco':('Fascia del banco',(155,288,1.58),(113,405,1.49)),'quota':('Piano alto',(220,317,1.58),(134,185,2.47)),'manovra':('Corsia di manovra',(228,397,1.59),(291,163,1.29))}
+if MEZZ:
+ stops['sopra']=('Sul livello superiore',MEZZ['upperCam'],MEZZ['upperAim'])
+ stops['scala']=('Scala e sbarco',MEZZ['stairCam'],MEZZ['stairAim'])
 camera_data=bpy.data.cameras.new('Fotocamera');camera=bpy.data.objects.new('Fotocamera',camera_data);scene.collection.objects.link(camera);scene.camera=camera
 def lighting(evening):
  bg.inputs[1].default_value=.085 if evening else .72;sun.data.energy=.055 if evening else 2.25
@@ -498,7 +507,9 @@ def render_at(name,eye,target,width,height,path,pano=False,ortho=False):
 def render_views():
  only=os.environ.get('CM_ONLY','');size=int(os.environ.get('CM_WIDTH','1536'))
  panosize=int(os.environ.get('CM_PANO','3072'));panostops=(['accesso','archi','banco','quota','manovra'] if BOX else ['sala','giardino','fronte','cucina','servizi'])
+ if MEZZ:panostops=['sala','giardino','fronte','scala','sopra']
  for evening in (False,True):
+  if scene.timeline_markers:scene.frame_set(2 if evening else 1)
   lighting(evening);time='sera' if evening else 'giorno'
   for name,(title,pos,target) in stops.items():
    if only and name!=only:continue
@@ -539,4 +550,7 @@ if os.environ.get('CM_NATIVE')=='1':
  bpy.context.preferences.filepaths.save_version=0
  bpy.ops.file.pack_all()
  bpy.ops.wm.save_as_mainfile(filepath=str(ATLAS/'modelli'/(SCHEME+'.blend')),compress=True)
-if os.environ.get('CM_BUILD_ONLY')!='1':render_views()
+if os.environ.get('CM_BUILD_ONLY')!='1':
+ if os.environ.get('CM_NATIVE')=='1':
+  camera_data=bpy.data.cameras.new('Camera render');camera=bpy.data.objects.new('Camera render',camera_data);scene.collection.objects.link(camera);scene.camera=camera
+ render_views()

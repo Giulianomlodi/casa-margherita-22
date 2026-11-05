@@ -18,6 +18,8 @@ titles={
  'G01':('G-C · Deposito in quota','Il progetto G01 nella configurazione più completa. Il deposito alto su montanti laterali richiede verifiche strutturali e autorizzative.')}
 concepts={'P01':[('P01','La quinta recuperata'),('P01-camera','Camera e guardaroba')],'P02':[('P02','Giardino d’inverno'),('P02-camera','La seconda camera'),('P02-alto','Il deposito sul filtro')],'P03':[('P03','Atelier sul giardino'),('P03-filtro','Dalla sala all’atelier')],'P04':[('P04','Il pranzo serale'),('P04-cucina','La cucina a due fronti')],'P05':[('P05','Salotto sul balcone'),('P05-parziale','La serra parziale')],'GA':[('GA','Garage essenziale')],'GB':[('GB','Banco e biciclette')],'G01':[('G01','Garage e banco')]}
 sources={'P01':'f09','P01-camera':'f05','P02':'f15','P02-camera':'f07','P02-alto':'f04','P03':'f10','P03-filtro':'f09','P04':'f10','P04-cucina':'f12','P05':'f05','P05-parziale':'f15','G01':'v2-05','GA':'v2-05','GB':'v2-05'}
+MEZZ=json.loads((ROOT/'scripts/mezzanines.json').read_text(encoding='utf-8-sig'))
+titles={**{k:v for k,v in titles.items() if k.startswith('P')},**{k:(v['title'],v['description']) for k,v in MEZZ.items()},**{k:v for k,v in titles.items() if k.startswith('G')}}
 previews='--preview' in sys.argv
 def rectilinear(pan,dest,pitch):
  if dest.exists() and dest.stat().st_mtime>=pan.stat().st_mtime:return
@@ -43,7 +45,11 @@ def generate():
  (A/'miniature').mkdir(exist_ok=True);catalog={}
  for id,(name,brief) in titles.items():
   meta=json.loads((A/'modelli'/f'{id}.json').read_text(encoding='utf8'));items=[]
-  for k,(f,t) in enumerate(concepts.get(id,[])):
+  if id in MEZZ:
+   items.append(dict(key='concept',name=MEZZ[id]['short'],kind='concept',image='atmosfere/'+id+'.webp',reference=('render/'+id+'-spaccato.webp') if id=='P08' else 'atmosfere/fonte-f09.webp'))
+   for key,title in [('L0','Tutta la casa · piano principale'),('L1','Piano soppalcato e sbarco'),('AA','Sezione quotata della scala')]:
+    items.append(dict(key=key,name=title,kind='plan',image='render/'+id+'_'+key+'.webp'))
+  for k,(f,t) in enumerate(concepts.get(id,[])): 
    ref=sources[f];path=ROOT.parent/'materiali'/(ref+'.jpg')
    src=convert_photo('fonte-'+ref+'.webp','Foto di partenza',path)['image']
    items.append(dict(key='concept' if k==0 else 'concept-'+str(k),name=t,kind='concept',image='atmosfere/'+f+'.webp',reference=src))
@@ -69,7 +75,7 @@ def generate():
   if not previews:
    assert sum(bool(item.get('pano')) for item in items)==5, id
    assert sum(bool(item.get('panoNight')) for item in items)==5, id
-  catalog[id]=dict(label=(id+' · ' if id.startswith('P') else '')+name,brief=brief,nodes=meta['nodi'],layers=meta['strati'],plan=roomplans,items=items)
+  catalog[id]=dict(mezzanine=MEZZ.get(id),label=(id+' · ' if id.startswith('P') else '')+name,brief=brief,nodes=meta['nodi'],layers=meta['strati'],plan=roomplans,items=items)
  html=(ROOT/'scripts/template.html').read_text(encoding='utf-8-sig');code=(ROOT/'cache/viewer.bundle.js').read_text(encoding='utf8').replace('</script','<\\/script')
  html=html.replace('__BOOT__','<script id="catalog" type="application/json">'+json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')+'</script><script>'+code+'</script>')
  (A/'index.html').write_text(html,encoding='utf8');(ROOT/'cache/catalog.json').write_text(json.dumps(catalog,ensure_ascii=False),encoding='utf8')

@@ -63,10 +63,21 @@ def create_version(id):
  site=entity('IfcSite','San Gregorio di Catania');building=entity('IfcBuilding','Palazzo Lombardo')
  storey=entity('IfcBuildingStorey','Piano terra | C6' if id.startswith('G') else 'Piano primo | A2')
  for parent,child in ((project,site),(site,building),(building,storey)):api.run('aggregate.assign_object',f,products=[child],relating_object=parent)
+ cases_path=Path(__file__).with_name('mezzanines.json')
+ cases=json.loads(cases_path.read_text(encoding='utf-8-sig')) if cases_path.exists() else {}
+ spec=cases.get(id);upper=None;upper_parts=[];lower_parts=[]
+ if spec:
+  upper=entity('IfcBuildingStorey','Livello superiore | '+spec['short']);upper.Elevation=spec['level']
+  api.run('aggregate.assign_object',f,products=[upper],relating_object=building)
  groups=elements(dest/(id+'.glb'));parts=[]
  for (room,layer,name),items in groups.items():
   cl=category(name,layer);element=entity(cl,room+' | '+name)
   element.Tag=id+'/'+layer+'/'+name
+  if spec and layer=='Quota alta' and not any(k in name.lower() for k in ('scala','cassetto estraibile','corpo contenitore','montante di studio','presa incassata','alzata')):
+   upper_parts.append(element)
+  else:lower_parts.append(element)
+  if spec and cl=='IfcStairFlight' and 'nuova scala' in name.lower():
+   count=spec['flight'][3];element.NumberOfRisers=count;element.NumberOfTreads=count-1;element.RiserHeight=spec['level']/count;element.TreadLength=spec['flight'][4]
   element.Description='Studio preliminare da NCV364 e riscontri fotografici. Profili e quote verticali locali indicativi.'
   coords=[];faces=[]
   for v,tri in items:
@@ -77,7 +88,8 @@ def create_version(id):
   element.Representation=f.create_entity('IfcProductDefinitionShape',Representations=[rep]);parts.append(element)
   ps=api.run('pset.add_pset',f,product=element,name='ARCHAI_Origine')
   api.run('pset.edit_pset',f,pset=ps,properties={'Versione':id,'Ambiente':room,'Strato':layer,'Base':'NCV364 p.13' if id.startswith('G') else 'NCV364 p.11','Fase':'Stato documentario' if id in ('G00','P00') else 'Ipotesi progettuale'})
- api.run('spatial.assign_container',f,products=parts,relating_structure=storey)
+ api.run('spatial.assign_container',f,products=lower_parts,relating_structure=storey)
+ if upper_parts:api.run('spatial.assign_container',f,products=upper_parts,relating_structure=upper)
  out=dest/(id+'.ifc');f.write(str(out))
  reread=ifc.open(str(out));assert len(reread.by_type('IfcElement'))==len(parts) and len(parts)>=5 and len(reread.by_type('IfcTriangulatedFaceSet'))==len(parts)
  print(id,len(parts),'componenti IFC',out.stat().st_size,flush=True)

@@ -17,3 +17,6 @@ Per discutere le idee in famiglia: P01–P05, D04 e E01.
 
 REVISIONE VISIVA R02
 Aprire Atlante_3D/index.html per la visita o Atlante_3D/Album_render.pdf per il quaderno illustrato. Dettagli, crediti, limiti delle ricostruzioni e istruzioni per le scene native in Atlante_3D/LEGGIMI.txt.
+
+REVISIONE R03 — TRE CASE, DUE QUOTE
+Aprire Atlante_3D/Case_e_soppalchi.pdf o le versioni P06–P08 del visualizzatore. Per ogni casa: piano principale L0, piano superiore L1, sezione A–A, modello arredato e cinque panorami giorno e sera. I 9 nuovi DXF sono in CAD/ e le 9 tavole SVG in tavole/.

@@ -69,6 +69,12 @@ function configurePanel(){
  const alternatives=versions.filter(id=>id!==state.id && id[0]===state.id[0]);
  if(!alternatives.includes(state.other))state.other=alternatives[0];
  options($('#other'),alternatives.map(id=>[id,catalog[id].label]),state.other);
+ const mezz=version.mezzanine;
+ $('#mezzPanel').hidden=!mezz;$('#isoMezz').hidden=!mezz||!model;
+ if(mezz){
+  const fmt=v=>v.toLocaleString('it-IT',{minimumFractionDigits:2,maximumFractionDigits:2});
+  $('#mezzMetrics').textContent='Piano a +'+fmt(mezz.level)+' m. Con H locale di 4,20 m rimarrebbero '+fmt(4.2-mezz.level)+' m sopra.';
+ }
  const entries=galleryItems();
  if(!entries.some(i=>i.key===state.subject))state.subject=entries[0]?.key;
  options($('#subject'),entries.map(i=>[i.key,i.name]),state.subject);
@@ -79,14 +85,14 @@ function configurePanel(){
  $('#strip').hidden=model;$('#prev').hidden=model;$('#next').hidden=model;
  $('#saveImage').hidden=model||pano||compare;
  const paired=state.mode==='gallery' && !!item?.reference && showSource;
- $('#sourcePhoto').hidden=state.mode!=='gallery'||!item?.reference;$('#sourcePhoto').setAttribute('aria-pressed',String(paired));
+ $('#sourcePhoto').textContent=state.id==='P08'?'Modello di partenza':'Foto di partenza';$('#sourcePhoto').hidden=state.mode!=='gallery'||!item?.reference;$('#sourcePhoto').setAttribute('aria-pressed',String(paired));
  $('#plates').hidden=model||pano;$('#second').hidden=!(compare||paired);$('#plates').classList.toggle('compare',compare||paired);
  if(engine)engine.domElement.hidden=!model&&!pano;
  $('#title').textContent=model?'Modello esplorabile':(item?.name||'');
  $('#caption').textContent=model?'Trascina per ruotare, avvicina con lo zoom e seleziona un elemento per identificarlo.':pano?'Trascina per guardarti intorno. Usa la rotella o due dita per lo zoom.':compare?'Stessa posizione di ripresa nelle due versioni.':'';
- if(!model && !pano && !compare)$('#caption').textContent=item?.kind==='concept'?'Veduta d’atmosfera elaborata dalla fotografia di riferimento.':item?.kind==='photo'?'Fotografia o fotogramma originale utilizzato per la ricostruzione.':'Vista calcolata dalla geometria del modello.';
- $('#badge').textContent=compare?imageName(state.id):item?.kind==='concept'?'Atmosfera':item?.kind==='photo'?'Riferimento originale':state.time==='sera'?'Dal modello · sera':'Dal modello · giorno';
- $('#badge2').textContent=paired?'Foto di partenza':imageName(state.other);
+ if(!model && !pano && !compare)$('#caption').textContent=item?.kind==='plan'?'Tavola di progetto in scala grafica. Apri il quaderno PDF per quote e programma completo.':item?.kind==='concept'?'Interpretazione d’atmosfera da fotografia o spaccato di riferimento.':item?.kind==='photo'?'Fotografia o fotogramma originale utilizzato per la ricostruzione.':'Vista calcolata dalla geometria del modello.';
+ $('#badge').textContent=compare?imageName(state.id):item?.kind==='plan'?'Tavola quotata':item?.kind==='concept'?'Atmosfera':item?.kind==='photo'?'Riferimento originale':state.time==='sera'?'Dal modello · sera':'Dal modello · giorno';
+ $('#badge2').textContent=paired?(state.id==='P08'?'Modello di partenza':'Foto di partenza'):imageName(state.other);
  return entries;
 }
 function drawPlan(){
@@ -238,7 +244,7 @@ async function download(path,button){
  catch(err){loading(err.message);}finally{button.disabled=false;}
 }
 options($('#scheme'),versions.map(id=>[id,catalog[id].label]),state.id);
-$('#scheme').onchange=e=>{const previous=current();state.id=e.target.value;if(!geometryEntry(state.id,state.subject))state.subject=catalog[state.id].items[0].key;refresh();};
+$('#scheme').onchange=e=>{hidden.clear();hidden.add('Contesto');hidden.add('Coperture');state.id=e.target.value;if(!geometryEntry(state.id,state.subject))state.subject=catalog[state.id].items[0].key;refresh();};
 $('#subject').onchange=e=>{state.subject=e.target.value;refresh();};$('#other').onchange=e=>{state.other=e.target.value;refresh();};
 for(const b of all('[data-mode]'))b.onclick=()=>{state.mode=b.dataset.mode;refresh();};
 for(const b of all('[data-time]'))b.onclick=()=>{state.time=b.dataset.time;refresh();};
@@ -251,10 +257,13 @@ $('#cameraStop').onchange=e=>{
  for(const label of $('#layers').querySelectorAll('label'))label.querySelector('input').checked=!hidden.has(label.textContent);
  controls.update();changeStyle();
 };
-function overall(top=false){$('#cameraStop').value='';hidden.add('Coperture');hidden.add('Contesto');$('#cut').value=1.55;for(const label of $('#layers').querySelectorAll('label'))label.querySelector('input').checked=!hidden.has(label.textContent);resetView(top);changeStyle();}
+function overall(top=false){hidden.clear();$('#cameraStop').value='';hidden.add('Coperture');hidden.add('Contesto');$('#cut').value=1.55;for(const label of $('#layers').querySelectorAll('label'))label.querySelector('input').checked=!hidden.has(label.textContent);resetView(top);changeStyle();}
 $('#reset').onclick=()=>overall();$('#top').onclick=()=>overall(true);$('#spin').onclick=e=>{controls.autoRotate=!controls.autoRotate;e.target.setAttribute('aria-pressed',String(controls.autoRotate));};
 $('#getBlend').onclick=e=>download('modelli/'+state.id+'.blend',e.target);
 $('#getGLB').onclick=e=>download('modelli/'+state.id+'.glb',e.target);$('#getIFC').onclick=e=>download('modelli/'+state.id+'.ifc',e.target);
+for(const [id,key] of [['see0','L0'],['see1','L1'],['seeSection','AA']])$('#'+id).onclick=()=>{state.mode='gallery';state.subject=key;showSource=false;refresh();};
+$('#mezzBook').onclick=e=>{if(online)window.parent.margheritaMezzBook(e.currentTarget);else window.open('Case_e_soppalchi.pdf','_blank','noopener');};
+$('#isoMezz').onclick=()=>{hidden.clear();for(const layer of catalog[state.id].layers)if(layer!=='Quota alta')hidden.add(layer);$('#cut').value=5;for(const label of $('#layers').querySelectorAll('label'))label.querySelector('input').checked=!hidden.has(label.textContent);changeStyle();};
 $('#sourcePhoto').onclick=()=>{showSource=!showSource;refresh();};
 $('#saveImage').onclick=e=>download(resolveImage(current()),e.target);
 $('#expand').onclick=async()=>{try{document.fullscreenElement?await document.exitFullscreen():await stage.requestFullscreen();}catch{stage.classList.toggle('maximized');}};
