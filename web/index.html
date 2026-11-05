@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="it"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer"><title>Casa Margherita · ARCHAI</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;color:#224739;background:#f5f3e9;font:16px/1.5 system-ui,sans-serif}
+header{padding:20px clamp(20px,5vw,70px);border-bottom:1px solid #b8c5b7;letter-spacing:.23em;font-size:13px;font-weight:700}
+main{max-width:660px;margin:clamp(48px,12vh,140px) auto;padding:0 23px}h1{font:400 clamp(45px,8vw,82px)/.99 Georgia,serif;letter-spacing:-.06em;margin:0 0 24px}
+p{margin:10px 0 23px}label{display:block;font-size:14px;font-weight:600}input,button{font:inherit;border-radius:4px}
+input{width:100%;padding:13px;background:#fffef8;border:1px solid #6a8070;margin:7px 0 13px;color:#234837}button{cursor:pointer;border:0;background:#234837;color:#fff;padding:12px 18px}button:disabled{opacity:.65}
+#status{font-size:15px;color:#74402d;min-height:24px}iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#f5f3e9} [hidden]{display:none!important}
+#notice{position:fixed;right:15px;bottom:10px;color:#fff;background:#254739;padding:10px 16px;z-index:3;border-radius:4px;font-size:14px}
+</style></head><body>
+<header>ARCHAI</header><main><h1>Casa Margherita</h1><p>Apri il link privato ricevuto via email per consultare le tavole e scaricare i file del progetto.</p>
+<form id="access"><label for="code">Link privato o chiave di accesso</label><input id="code" type="password" placeholder="Incolla qui il link o la chiave" autocomplete="off" autocapitalize="none" spellcheck="false" required>
+<button id="enter">Apri il progetto</button></form><p id="status" role="status" aria-live="polite"></p></main>
+<iframe id="viewer" title="Dossier Casa Margherita" hidden></iframe><div id="notice" role="status" hidden></div>
+<script src="/app.js" defer></script></body></html>

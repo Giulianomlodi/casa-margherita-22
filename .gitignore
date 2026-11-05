@@ -1,0 +1,5 @@
+fonti_private/
+.accesso/
+.netlify/
+__pycache__/
+*.tmp

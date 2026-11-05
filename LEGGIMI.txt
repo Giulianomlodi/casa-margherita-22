@@ -1,0 +1,16 @@
+CASA MARGHERITA / PALAZZO LOMBARDO
+Piazza Regina Margherita 22, San Gregorio di Catania
+ARCHAI / CASATATOTATA / Casa_Margherita_22  |  R01 – 5 novembre 2026
+
+APRIRE
+Casa_Margherita_22.pdf: dossier in 26 tavole, A3 orizzontale.
+Apri_il_progetto.html: edizione offline, indice a tendina, link al PDF. Mantenere accanto le cartelle materiali e tavole.
+tavole/: 17 disegni SVG autonomi, modificabili e ingrandibili.
+CAD/: 8 DXF in metri, primo piano P00–P05 e garage G00–G01. La scala deriva dalla scheda raster DOCFA, non da misure laser. In CAD usare i layer MURI_CARTA, FINESTRE, ESTERNI, SCALA, PROPOSTA, ARREDI_INDICATIVI, VOLUME_ALTO, DA_VERIFICARE, RIFERIMENTI. La vetrata nello stato attuale è posizionata per inferenza. Nessuna geometria nel file rappresenta una verifica strutturale. I due subalterni hanno origini convenzionali: non sovrapporli per dedurre gli appoggi.
+materiali/: figure di lavoro, estratti cartografici, 15 immagini dell'annuncio (f01–f15); fermo immagine v1 o v2 seguito dai secondi dall'inizio. Fonti e condizioni di lettura in E04.
+Gli originali dei due video sono nella cartella CASATATOTATA superiore. Nella copia di progetto in ARCHAI, fonti_private/ conserva anche i due allegati dell'incarico.
+
+PERCORSI DI LETTURA
+Prima dell'acquisto: A01, A04, D01, E01, E02b, E03.
+Per il sopralluogo: R01–R04, P01, P02, D02, D05, G01 e G02.
+Per discutere le idee in famiglia: P01–P05, D04 e E01.
