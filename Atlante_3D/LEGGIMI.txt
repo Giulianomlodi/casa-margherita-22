@@ -2,7 +2,7 @@ CASA MARGHERITA 22 / ATLANTE 3D — R02
 Palazzo Lombardo, San Gregorio di Catania
 
 COME APRIRE
-Online: dal dossier privato selezionare “Render e 3D”. Il link privato contiene la chiave di accesso. Nel selettore in alto sono disponibili nove versioni dell’appartamento e quattro del garage.
+Online: aprire https://casa-margherita-archai.netlify.app/ e selezionare “Render e 3D”. Nel selettore in alto sono disponibili nove versioni dell’appartamento e quattro del garage.
 Offline: estrarre l’intero ZIP e aprire Atlante_3D/index.html. La galleria si apre dal disco. Per usare i modelli dal file locale selezionare la cartella Atlante_3D quando il browser lo richiede. Si può anche avviare un server statico locale dalla cartella del progetto e aprire il percorso /Atlante_3D/.
 
 GALLERIA, MODELLO, TOUR, CONFRONTO

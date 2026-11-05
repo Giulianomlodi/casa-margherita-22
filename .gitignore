@@ -3,3 +3,9 @@ fonti_private/
 .netlify/
 __pycache__/
 *.tmp
+/dist/
+/.site-*/
+/public/*
+!/public/archivio/
+/public/archivio/*
+!/public/archivio/originali.bin
