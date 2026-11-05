@@ -8,7 +8,7 @@ In locale, aprire `Apri_il_progetto.html` o `Casa_Margherita_22.pdf`. Le cartell
 
 ## Pubblicazione
 
-Netlify serve esclusivamente `public/` dalla branch `main`. Il portale decifra nel browser i materiali con AES-256-GCM. La chiave si trova nel frammento del link riservato. Chi riceve il link completo può aprire il progetto.
+Netlify serve esclusivamente `public/` dal ramo `main`. Il webhook del repository attiva il build hook privato del sito sulla versione corrente di `main`. Il portale decifra nel browser i materiali con AES-256-GCM. La chiave si trova nel frammento del link riservato. Chi riceve il link completo può aprire il progetto.
 
 Per modificare testi, disegni o materiali, aggiornare i file sorgente. Per cambiare la pagina di accesso o i pulsanti aggiornare `web/`. Dalla copia di lavoro che contiene la chiave installare `cryptography` per Python 3 e lanciare `python scripts/publish.py`. Verificare e committare anche `public/`, quindi inviare il commit a `main`.
 
