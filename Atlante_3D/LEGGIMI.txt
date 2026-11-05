@@ -1,0 +1,31 @@
+CASA MARGHERITA 22 / ATLANTE 3D — R02
+Palazzo Lombardo, San Gregorio di Catania
+
+COME APRIRE
+Online: dal dossier privato selezionare “Render e 3D”. Il link privato contiene la chiave di accesso. Nel selettore in alto sono disponibili sei versioni dell’appartamento e quattro del garage.
+Offline: estrarre l’intero ZIP e aprire Atlante_3D/index.html. La galleria si apre dal disco. Per usare i modelli dal file locale selezionare la cartella Atlante_3D quando il browser lo richiede. Si può anche avviare un server statico locale dalla cartella del progetto e aprire il percorso /Atlante_3D/.
+
+GALLERIA, MODELLO, TOUR, CONFRONTO
+La galleria unisce viste calcolate con Blender, fotografie di riscontro e immagini d’atmosfera. “Foto di partenza” affianca la vista d’atmosfera alla fotografia o al fotogramma usato. La stessa coppia può usare arredi e finiture interpretati.
+Il modello GLB ruota e si ingrandisce. “Taglio delle pareti” abbassa l’involucro per leggere l’interno. Le caselle selezionano strutture, serramenti, finiture, arredi, quote alte, coperture, vegetazione e contesto quando presenti. Selezionare una posizione per entrare nella casa o toccare un elemento per leggerne nome e ambiente.
+Il tour mostra cinque stazioni per ciascuna delle dieci versioni, ciascuna di giorno e di sera. Le immagini sferiche hanno 4096 × 2048 pixel. I punti sulla piantina cambiano la stazione. In “Confronta” sono proposte soltanto le inquadrature coincidenti dei due modelli scelti.
+Le prospettive dei punti panoramici sono estratte dagli stessi panorami. Le ulteriori prospettive e gli spaccati vengono calcolati dalle scene Blender. Il cambio giorno/sera è illustrativo; per la verifica di ombre e apporti solari servono orientamento e rilievo.
+
+SCENE E FILE DI SCAMBIO
+P00 = stato documentario; P01 = sequenza; P02 = due camere; P03 = atelier; P04 = cucina degli ospiti; P05 = salotto sulla piazza.
+G00 = stato documentario. GA = livello G-A essenziale; GB = livello G-B con banco e biciclette; G01 = tavola G01 sviluppata nella configurazione G-C, con deposito alto ipotetico.
+modelli/*.glb: modelli di presentazione completi con geometria, materiali, arredi e metadati di ambiente e strato. In glTF l’asse Y è verticale, le distanze sono in metri.
+modelli/*.ifc: scambio IFC4 in metri, asse Z verticale, con elementi architettonici classificati e ingombri selezionati degli arredi. Le forme sono tassellate, le geometrie sono preliminari. I valori non costituiscono un computo dei lavori.
+modelli/*.blend: scene modificabili salvate con Blender 5.2.1, con materiali e immagini incorporate. Fotocamere “Vista | …” per gli ambienti. Nella timeline il fotogramma 1 richiama il giorno, il 2 la sera.
+Album_render.pdf: selezione impaginata per la discussione in famiglia o con il tecnico.
+
+PROVENIENZA E LIMITI
+Il sub 8 e il sub 10 sono ricostruiti da basi separate. I modelli conservano la scala grafica di NCV364 pagine 11 e 13 e i varchi leggibili in tavola. Le due origini sono indipendenti. Profili delle volte, sezioni delle cornici, ferramenta, appoggi, stati materici, camere e ostruzioni del contesto sono interpretati. I vani adiacenti della bottega restano esterni allo studio.
+La serra, le modifiche distributive e i piani alti sono ipotesi subordinate a rilievo, verifica strutturale e ammissibilità nell’immobile storico, come descritto nel dossier A04/D01/D02. Il piano alto esistente del garage è ricostruito dal solo riscontro video.
+Le 14 immagini d’atmosfera sono visualizzazioni generative ImageGen guidate dalle fotografie RE/MAX e dai video privati, caratterizzate separatamente dai render geometrici.
+
+CREDITI TECNICI
+Arredi e vegetazione di presentazione ricavati dalla biblioteca locale del progetto ARCHAI e adattati a questa abitazione. Modelli, terrazzi, prospetti parziali, strutture, finiture e allestimenti sono ricostruiti per Casa Margherita. Texture di graniglia e basalto realizzate per questo studio.
+Cielo: Kloofendal 38d Partly Cloudy (Pure Sky), Poly Haven, CC0. https://polyhaven.com/a/kloofendal_38d_partly_cloudy_puresky
+Texture legno: Oak Wood Planks, Poly Haven, CC0. https://polyhaven.com/a/oak_wood_planks
+Visualizzatore: Three.js, licenza MIT, riprodotta nel file LICENZA-Three.txt.

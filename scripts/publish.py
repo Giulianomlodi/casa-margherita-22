@@ -2,6 +2,7 @@ from pathlib import Path
 from io import BytesIO
 import base64
 import hashlib
+import json
 import mimetypes
 import os
 import re
@@ -28,6 +29,7 @@ key = AESGCM(KEYFILE.read_bytes())
 def seal(name, plain):
     # Reuse an existing ciphertext only when the same key decrypts it to the same bytes.
     target = ARCHIVE / (name + ".bin")
+    target.parent.mkdir(parents=True, exist_ok=True)
     if target.exists():
         old = target.read_bytes()
         try:
@@ -65,10 +67,30 @@ if count != 1:
 html = html.replace("</style>", ".tools [data-file]{display:inline-block}.tools{flex-wrap:wrap}@media screen and (max-width:760px){.tools [data-file]{font-size:12px;padding:6px}.sheet{scroll-margin-top:105px}}@media print{.tools{display:none!important}}</style>")
 seal("dossier", html.encode("utf-8"))
 seal("pdf", (ROOT / "Casa_Margherita_22.pdf").read_bytes())
+atlas = ROOT / "Atlante_3D"
+seal("atlante", (atlas / "index.html").read_bytes())
+seal("album", (atlas / "Album_render.pdf").read_bytes())
+for asset in sorted(atlas.rglob("*")):
+    if asset.is_file() and asset.suffix.lower() in {".webp", ".ifc", ".glb", ".blend"}:
+        relative_name = asset.relative_to(atlas).as_posix()
+        key_name = hashlib.sha256(("3d/"+relative_name).encode("utf-8")).hexdigest()[:32]
+        seal("v3/" + key_name, asset.read_bytes())
 files = [ROOT / s for s in ["Apri_il_progetto.html", "Casa_Margherita_22.pdf", "LEGGIMI.txt"]]
-for folder in ["CAD", "tavole", "materiali"]:
+for folder in ["CAD", "tavole", "materiali", "Atlante_3D"]:
     files.extend(p for p in (ROOT / folder).rglob("*") if p.is_file())
-seal("progetto", pack([(p, "Casa_Margherita_22/" + p.relative_to(ROOT).as_posix()) for p in files]))
+complete = pack([(p, "Casa_Margherita_22/" + p.relative_to(ROOT).as_posix()) for p in files])
+# Each new Git blob stays well below the GitHub per-file cap.
+part_size = 40 * 1024 * 1024
+if len(complete) <= 80 * 1024 * 1024:
+    part_names = ["progetto"]
+    seal("progetto", complete)
+else:
+    part_names = []
+    for offset in range(0, len(complete), part_size):
+        part_name = "progetto-parte-" + str(len(part_names)+1)
+        seal(part_name, complete[offset:offset + part_size])
+        part_names.append(part_name)
+seal("progetto-indice", json.dumps({"parts": part_names, "size": len(complete)}).encode("utf-8"))
 videos = [ROOT.parent / ("WhatsApp Video 2026-11-05 at " + t + ".mp4") for t in ("13.55.29", "13.55.42")]
 sources = [ROOT / "fonti_private" / f for f in ("1-NCV364.pdf", "2-Photo-2.jpg")]
 if all(p.is_file() for p in videos + sources):

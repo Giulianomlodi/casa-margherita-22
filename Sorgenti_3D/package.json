@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "build:viewer": "esbuild scripts/viewer.js --bundle --minify --target=es2020 --format=iife --outfile=cache/viewer.bundle.js"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

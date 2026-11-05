@@ -14,3 +14,6 @@ PERCORSI DI LETTURA
 Prima dell'acquisto: A01, A04, D01, E01, E02b, E03.
 Per il sopralluogo: R01–R04, P01, P02, D02, D05, G01 e G02.
 Per discutere le idee in famiglia: P01–P05, D04 e E01.
+
+REVISIONE VISIVA R02
+Aprire Atlante_3D/index.html per la visita o Atlante_3D/Album_render.pdf per il quaderno illustrato. Dettagli, crediti, limiti delle ricostruzioni e istruzioni per le scene native in Atlante_3D/LEGGIMI.txt.
