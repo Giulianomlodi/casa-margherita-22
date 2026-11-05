@@ -4,7 +4,7 @@ Studio preliminare per l'appartamento di Palazzo Lombardo e il garage di Vico Pi
 
 ## Consultazione
 
-In locale, aprire `Apri_il_progetto.html` o `Casa_Margherita_22.pdf`. Le cartelle `CAD/` e `tavole/` contengono rispettivamente 8 DXF e 17 SVG. Il sito Netlify apre lo stesso dossier con il link privato consegnato via email e permette di scaricare PDF, progetto completo e originali.
+In locale, aprire `Apri_il_progetto.html` o `Casa_Margherita_22.pdf`. Le cartelle `CAD/` e `tavole/` contengono rispettivamente 8 DXF e 17 SVG. Il [portale Netlify](https://casa-margherita-22.netlify.app/) apre lo stesso dossier con il link privato consegnato via email e permette di scaricare PDF, progetto completo e originali.
 
 ## Pubblicazione
 
