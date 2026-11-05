@@ -41,8 +41,20 @@ def copy_site(staging):
     html = html.replace("<title>", head + '<meta name="referrer" content="no-referrer"><title>', 1)
     html = html.replace("</style>", ".tools{flex-wrap:wrap}.tools [hidden]{display:none!important}@media screen and (max-width:760px){.tools{position:static}}</style>", 1)
     html = html.replace("</body>", '<script src="/app.js"></script></body>')
-    for filename in ("index.html", "Apri_il_progetto.html"):
-        (staging / filename).write_text(html, encoding="utf-8")
+    archive_notice = '<p style="margin:0;padding:11px 4%;background:#f2dcc5;color:#462c1f">Archivio R01–R03 · Questa edizione comprende proposte superate, tra cui la camera nel vano a cuneo. <a href="/">Apri la revisione R04 e il confronto metrico</a>.</p>'
+    html = html.replace('<nav class="tools">',archive_notice+'<nav class="tools">',1)
+    (staging/"Apri_il_progetto.html").write_text(html, encoding="utf-8")
+    archive = staging/"archivio-progetto"
+    archive.mkdir()
+    (archive/"index.html").write_text(html.replace('<meta charset="utf-8">','<meta charset="utf-8"><base href="/"><meta name="robots" content="noindex">',1),encoding="utf-8")
+    legacy_atlas = staging/"Atlante_3D/index.html"
+    atlas_html = legacy_atlas.read_text(encoding="utf-8").replace('<body>', '<body>'+archive_notice, 1)
+    legacy_atlas.write_text(atlas_html, encoding="utf-8")
+    project = ROOT/"R04"
+    for filename in ("index.html","decision.js","style.css"):
+        shutil.copyfile(project/"portal"/filename,staging/filename)
+    shutil.copytree(project/"decisioni",staging/"decisioni")
+
 
 
 def main():

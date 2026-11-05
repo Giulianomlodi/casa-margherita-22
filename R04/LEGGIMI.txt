@@ -1,0 +1,4 @@
+CASA MARGHERITA · R04
+Aprire decisioni/Verifica_R04.pdf per la decisione e la verifica metrica. I file .blend e .glb sono modelli modificabili; .ifc è lo scambio geometrico in metri. I file .dxf si aprono con un CAD. I render .webp sono consultabili senza software 3D.
+A casa con guardaroba; B due camere, una sul retro; C salotto su pedana; D casa con atelier; E salotto sulla piazza. T stato documentato, G garage, G2 garage con banco, biciclette e auto campione.
+Per utilizzare la pagina offline, nella cartella estratta avviare python -m http.server 8000 e aprire http://localhost:8000/. I link agli annunci e all’archivio storico richiedono internet.

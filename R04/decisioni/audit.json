@@ -1,0 +1,528 @@
+{
+  "scale": 0.025403224909310757,
+  "scaleY": 0.02540322625830959,
+  "units": [
+    {
+      "label": "Interni · abitazione",
+      "doc": "112 m² utili¹",
+      "draw": "113,2 m²",
+      "note": "¹ 81 principali + 4 bagno + 27 accessori. Scala ed esterni esclusi dalla somma grafica."
+    },
+    {
+      "label": "Scarto con la pubblicità",
+      "doc": "157 m² calpestabili · Idealista",
+      "draw": "45 m² rispetto al DOCFA",
+      "note": "Chiedere il conteggio analitico e un rilievo. Non ridimensionare la pianta per forzarla a 157."
+    },
+    {
+      "label": "Camere, cucina e salone",
+      "doc": "81 m² · 3 vani",
+      "draw": "81,6 m²",
+      "note": "L’attribuzione dei vani è un confronto con il modello 1NB."
+    },
+    {
+      "label": "Bagno",
+      "doc": "4 m²",
+      "draw": "4,3 m²",
+      "note": "Il secondo bagno di alcune vecchie varianti era una proposta."
+    },
+    {
+      "label": "Ingresso e due ripostigli",
+      "doc": "27 m²",
+      "draw": "27,3 m²",
+      "note": "Il vano triangolare è compreso negli accessori."
+    },
+    {
+      "label": "Terrazzo + balcone",
+      "doc": "25 m² lordi aggregati",
+      "draw": "25,4 m² grafici",
+      "note": "Terrazzo e balcone sono distinti nella tabella dei vani. Annunci: terrazzo 12 e 20 m² circa."
+    },
+    {
+      "label": "Garage · unità separata",
+      "doc": "52 m² utili / 66 lordi",
+      "draw": "50,9 m²",
+      "note": "Pilastro e rientranze detratti; sagoma del retrobottega esclusa."
+    },
+    {
+      "label": "Abitazione lorda",
+      "doc": "159 m² · gruppo A",
+      "draw": "perimetro non equiparato",
+      "note": "165 m² pubblicizzati dall’agenzia. Criteri diversi dal netto interno."
+    },
+    {
+      "label": "Altezza di riferimento",
+      "doc": "casa 4,20 m · box 4,35 m",
+      "draw": "nessuna sezione quotata",
+      "note": "Gli annunci indicano oltre 4 m. Misurare imposta, chiave e ogni sbarco."
+    }
+  ],
+  "rooms": [
+    {
+      "id": "wc",
+      "name": "Bagno sul retro",
+      "area": "4,3 m²",
+      "span": "1,35 × 3,20 m · inviluppo",
+      "note": "Un solo servizio documentato.",
+      "value": 4.309,
+      "old": 4.309,
+      "range": [
+        3.86,
+        4.78
+      ]
+    },
+    {
+      "id": "terr",
+      "name": "Terrazzo",
+      "area": "16,9 m²",
+      "span": "5,28 × 3,20 m · inviluppo",
+      "note": "Superficie aperta al netto del WC. Chiusura da verificare.",
+      "value": 16.913,
+      "old": 16.913,
+      "range": [
+        16.06,
+        17.79
+      ]
+    },
+    {
+      "id": "k",
+      "name": "Cucina",
+      "area": "20,9 m²",
+      "span": "2,69 × 8,97 m · inviluppo",
+      "note": "Vano irregolare: la parte a ridosso della scala si stringe.",
+      "value": 20.907,
+      "old": 20.908,
+      "range": [
+        19.74,
+        22.09
+      ]
+    },
+    {
+      "id": "liv",
+      "name": "Salone in sequenza",
+      "area": "39,9 m²",
+      "span": "4,72 × 9,53 m · inviluppo",
+      "note": "La quinta vetrata compare nelle foto. La sua posizione esatta non è quotata.",
+      "value": 39.92,
+      "old": 39.912,
+      "range": [
+        38.5,
+        41.36
+      ]
+    },
+    {
+      "id": "entry",
+      "name": "Ingresso",
+      "area": "9,8 m²",
+      "span": "2,34 × 4,19 m · inviluppo",
+      "note": "Distribuisce zona giorno e fronte.",
+      "value": 9.796,
+      "old": 9.796,
+      "range": [
+        9.14,
+        10.47
+      ]
+    },
+    {
+      "id": "rip",
+      "name": "Ripostiglio centrale",
+      "area": "9,4 m²",
+      "span": "2,57 × 4,19 m · inviluppo",
+      "note": "Nessuna nuova camera o superficie abitabile attribuita.",
+      "value": 9.371,
+      "old": 9.423,
+      "range": [
+        8.73,
+        10.04
+      ]
+    },
+    {
+      "id": "big",
+      "name": "Camera rettangolare sulla piazza",
+      "area": "20,8 m²",
+      "span": "4,37 × 4,75 m · inviluppo",
+      "note": "Portafinestra sul balcone. Qui è collocata la matrimoniale nelle tre proposte.",
+      "value": 20.756,
+      "old": 20.756,
+      "range": [
+        19.84,
+        21.69
+      ]
+    },
+    {
+      "id": "small",
+      "name": "Ripostiglio a cuneo",
+      "area": "8,2 m²",
+      "span": "2,93 × 4,76 m · inviluppo",
+      "note": "In pianta è RIP. La larghezza cambia lungo il vano. Destinato a guardaroba.",
+      "value": 8.158,
+      "old": 7.969,
+      "range": [
+        7.51,
+        8.82
+      ]
+    },
+    {
+      "id": "balcony",
+      "name": "Balcone sulla piazza",
+      "area": "8,5 m²",
+      "span": "9,30 × 1,86 m · inviluppo",
+      "note": "Esterno distinto dal terrazzo e dal netto interno.",
+      "value": 8.49,
+      "old": 8.488,
+      "range": [
+        7.46,
+        9.54
+      ]
+    },
+    {
+      "id": "garage",
+      "name": "Garage, subalterno 10",
+      "area": "50,9 m²",
+      "span": "6,91 × 7,67 m · inviluppo",
+      "note": "Area interna con il pilastro centrale sottratto. Accesso da Vico Piazza.",
+      "value": 50.909,
+      "old": 51.214,
+      "range": [
+        49.27,
+        52.55
+      ]
+    }
+  ],
+  "findings": [
+    "Il vano a cuneo misura circa 8 m². In tre sezioni trasversali (righe 819, 900 e 965 del ritaglio) la larghezza grafica passa da circa 0,60 a 1,89 e 2,90 m. Il DOCFA lo identifica come ripostiglio.",
+    "Idealista riporta 157 m² calpestabili. Il modello 1NB totalizza 112 m² utili e il ricalcolo restituisce circa 113 m². Lo scarto di 45 m² fra annuncio e dichiarazione richiede un rilievo prima di valutare il prezzo al metro.",
+    "La scala nominale ricostruita su entrambe le pagine è circa 2,54 cm per pixel. La doppia misura raster/poligoni serve a controllare il disegno, non l’esattezza del rilievo originario.",
+    "La casa ha un solo bagno documentato. La quota di 4,20 m è riferita all’unità; le quote delle volte vano per vano restano aperte.",
+    "I due filmati forniti riscontrano la quinta, il restringimento e gli archi del garage. Nessun altro video pubblico con misure e identità verificabili è stato individuato."
+  ],
+  "sources": [
+    [
+      "Scheda RE/MAX · MLS 32311140-23",
+      "https://domus-nova.remax.it/vendita-appartamento/san-gregorio-di-catania/centro-32311140-23",
+      "165 m² di offerta; terrazzo circa 12 m²; garage venduto separatamente, 66 m². Foto F01–F15."
+    ],
+    [
+      "Casa.it · 54713813",
+      "https://www.casa.it/immobili/54713813/",
+      "15 foto; stessa agenzia e descrizione. Volte oltre 4 m; nessuna quota per singolo vano."
+    ],
+    [
+      "Idealista · 36796296",
+      "https://www.idealista.it/immobile/36796296/",
+      "Riporta 165 m² commerciali e 157 calpestabili: 45 in più dei 112 utili DOCFA. Foto segnalata come modificata IA, esclusa dalla misura."
+    ],
+    [
+      "TrovaCasa · rif. 2347",
+      "https://www.trovacasa.it/annunci/ct-tc-59944-73068047",
+      "Replica della medesima inserzione. I dati ripetuti hanno un solo emittente."
+    ],
+    [
+      "RE/MAX · MLS 32311140-14",
+      "https://www.remax.it/trova/immobile/Casa-Indipendente-In-Vendita-San-Gregorio-Di-Catania_32311140-14",
+      "Vendita storica dell’intero palazzo. Casa circa 170 m², terrazzo 20, garage 70, bottega distinta."
+    ],
+    [
+      "Idealista · palazzo intero, 36 foto",
+      "https://www.idealista.it/immobile/35016491/",
+      "Vecchio lotto con negozio. L’inserzione segnala un’immagine modificata con IA; 340 m² comprendono più unità."
+    ],
+    [
+      "Casa.it · palazzo intero, 30 foto",
+      "https://www.casa.it/immobili/53443694/",
+      "Serie storica indicizzata di 30 foto; accesso integrale non verificato."
+    ],
+    [
+      "Immobiliare.it · rif. 127165429",
+      "https://www.immobiliare.it/annunci/127165429/",
+      "Scheda storica del lotto da 340 m². Il pozzo è descritto dall’agenzia, da localizzare in visita."
+    ]
+  ],
+  "polygons": {
+    "wc": [
+      [
+        65.0,
+        106.0
+      ],
+      [
+        65.0,
+        232.0
+      ],
+      [
+        118.0,
+        232.0
+      ],
+      [
+        118.0,
+        106.0
+      ]
+    ],
+    "terr": [
+      [
+        131.0,
+        106.0
+      ],
+      [
+        131.0,
+        232.0
+      ],
+      [
+        339.0,
+        232.0
+      ],
+      [
+        339.0,
+        106.0
+      ]
+    ],
+    "k": [
+      [
+        65.0,
+        246.0
+      ],
+      [
+        65.0,
+        459.03
+      ],
+      [
+        73.06,
+        599.0
+      ],
+      [
+        141.0,
+        599.0
+      ],
+      [
+        141.0,
+        450.97
+      ],
+      [
+        171.0,
+        449.97
+      ],
+      [
+        171.0,
+        246.0
+      ]
+    ],
+    "liv": [
+      [
+        184.0,
+        246.0
+      ],
+      [
+        184.0,
+        463.03
+      ],
+      [
+        153.0,
+        464.03
+      ],
+      [
+        153.0,
+        621.0
+      ],
+      [
+        323.91,
+        621.0
+      ],
+      [
+        339.0,
+        469.05
+      ],
+      [
+        339.0,
+        246.0
+      ]
+    ],
+    "entry": [
+      [
+        153.0,
+        632.0
+      ],
+      [
+        153.0,
+        797.0
+      ],
+      [
+        245.0,
+        797.0
+      ],
+      [
+        245.0,
+        632.0
+      ]
+    ],
+    "rip": [
+      [
+        249.0,
+        632.0
+      ],
+      [
+        249.0,
+        797.0
+      ],
+      [
+        350.17,
+        797.0
+      ],
+      [
+        323.85,
+        632.0
+      ]
+    ],
+    "big": [
+      [
+        153.0,
+        817.0
+      ],
+      [
+        153.0,
+        1004.0
+      ],
+      [
+        325.0,
+        1004.0
+      ],
+      [
+        325.0,
+        817.0
+      ]
+    ],
+    "small": [
+      [
+        328.0,
+        817.0
+      ],
+      [
+        328.0,
+        1004.36
+      ],
+      [
+        443.2,
+        968.68
+      ],
+      [
+        441.93,
+        963.6
+      ],
+      [
+        350.56,
+        817.0
+      ]
+    ],
+    "balcony": [
+      [
+        464.24,
+        1014.66
+      ],
+      [
+        454.81,
+        983.22
+      ],
+      [
+        451.01,
+        981.95
+      ],
+      [
+        331.85,
+        1019.0
+      ],
+      [
+        98.0,
+        1019.0
+      ],
+      [
+        98.0,
+        1055.0
+      ],
+      [
+        337.15,
+        1055.0
+      ]
+    ],
+    "garage": [
+      [
+        85.04,
+        242.85
+      ],
+      [
+        91.0,
+        243.85
+      ],
+      [
+        91.0,
+        264.15
+      ],
+      [
+        84.96,
+        265.16
+      ],
+      [
+        93.05,
+        440.0
+      ],
+      [
+        176.92,
+        440.0
+      ],
+      [
+        177.92,
+        428.0
+      ],
+      [
+        200.08,
+        428.0
+      ],
+      [
+        201.08,
+        439.99
+      ],
+      [
+        352.0,
+        441.01
+      ],
+      [
+        352.0,
+        266.22
+      ],
+      [
+        348.0,
+        265.22
+      ],
+      [
+        348.0,
+        244.78
+      ],
+      [
+        352.0,
+        243.78
+      ],
+      [
+        352.0,
+        139.0
+      ],
+      [
+        201.22,
+        139.0
+      ],
+      [
+        200.22,
+        143.0
+      ],
+      [
+        177.78,
+        143.0
+      ],
+      [
+        176.78,
+        139.0
+      ],
+      [
+        79.95,
+        139.0
+      ]
+    ]
+  },
+  "net": 113.218
+}

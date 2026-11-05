@@ -1,8 +1,16 @@
 # Casa Margherita 22
 
+## Revisione R04
+
+[Decisione e confronto tra le case](https://casa-margherita-archai.netlify.app/) · [Quaderno metrico R04](https://casa-margherita-archai.netlify.app/decisioni/Verifica_R04.pdf) · [Visita 3D ricalcolata](https://casa-margherita-archai.netlify.app/decisioni/atlante.html?variante=A) · [Scarica la release R04](https://github.com/Giulianomlodi/casa-margherita-22/releases/tag/r04-verificata)
+
+Cinque proposte senza camera a cuneo, due ricostruzioni di stato, sovrapposizioni catastali, misure dichiarate e ricalcolate, CAD, IFC, Blender e render. Il confronto con altre case e le planimetrie allegate sono salvati nel browser del visitatore. Per i file di questa edizione entrare in `R04/`.
+
+## Archivio R01–R03
+
 Studio preliminare per l’appartamento di Palazzo Lombardo e il garage di Vico Piazza, San Gregorio di Catania.
 
-[Consulta il dossier pubblico](https://casa-margherita-archai.netlify.app/) · [Visita le proposte in 3D](https://casa-margherita-archai.netlify.app/Atlante_3D/?versione=P06) · [Scarica il progetto e i CAD](https://github.com/Giulianomlodi/casa-margherita-22/releases/download/r03-pubblica/Casa_Margherita_22_Progetto.zip)
+[Consulta il dossier storico](https://casa-margherita-archai.netlify.app/archivio-progetto/) · [Visita le proposte in 3D](https://casa-margherita-archai.netlify.app/Atlante_3D/?versione=P06) · [Scarica il progetto e i CAD](https://github.com/Giulianomlodi/casa-margherita-22/releases/download/r03-pubblica/Casa_Margherita_22_Progetto.zip)
 
 Il dossier di 26 tavole descrive l’immobile, l’analisi territoriale e cinque ipotesi di intervento. Il quaderno *Tre case, due quote* aggiunge tre proposte per tutta la casa, con piante principali, piante alte, sezioni e viste delle scale. Nell’atlante si possono esplorare nove versioni dell’appartamento e quattro del garage.
 

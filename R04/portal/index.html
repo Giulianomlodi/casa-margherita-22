@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casa Margherita · Casa con guardaroba — ARCHAI</title>
+  <meta name="description" content="Casa Margherita, decisione R04: la proposta Casa con guardaroba, il confronto tra le proposte le cinque alternative, le aree dei vani e le fonti di verifica.">
+  <meta name="theme-color" content="#f6f1e7">
+  <meta name="color-scheme" content="light">
+  <link rel="preload" as="image" href="/materiali/f01.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+  <script src="decision.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
+  <p class="sr-only" data-announce aria-live="polite"></p>
+
+  <header class="masthead">
+    <div class="masthead__inner wrap">
+      <a class="brand" href="#casa">
+        <span class="brand__mark">ARCHAI</span>
+        <span class="brand__sep" aria-hidden="true">/</span>
+        <span class="brand__name">Casa Margherita</span>
+      </a>
+      <nav class="nav" aria-label="Sezioni">
+        <ul class="nav__list">
+          <li><a href="#casa">Decisione</a></li>
+          <li><a href="#confronto">Confronto</a></li>
+          <li><a href="#aree">Aree</a></li>
+          <li><a href="#fonti">Fonti</a></li>
+          <li><a href="#altre-case" class="nav__altre" data-nav-altre>Altre case <span class="nav__count" data-altre-count hidden></span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenuto" tabindex="-1">
+
+    <!-- Vista: Casa Margherita -->
+    <div class="view" data-view="casa">
+
+      <section class="hero wrap" id="casa" aria-labelledby="titolo">
+        <header class="hero__head">
+          <p class="kicker">Palazzo Lombardo<span data-place></span></p>
+          <h1 class="hero__title" id="titolo">Casa <em>Margherita</em></h1>
+          <p class="hero__lede">Sceglierei la casa con guardaroba. Se vi servono due camere, la proposta B sposta la singola sul retro e lascia libero il vano a cuneo.</p>
+        </header>
+
+        <figure class="hero__figure">
+          <div class="frame">
+            <div class="crop" data-hero-crop>
+              <img src="/materiali/f01.jpg" alt="Il soggiorno di Casa Margherita nello stato attuale" fetchpriority="high" decoding="async" data-hero-img>
+              <p class="crop__missing" data-hero-missing hidden>La fotografia del soggiorno non è raggiungibile in questo momento.</p>
+            </div>
+          </div>
+          <figcaption class="caption">
+            <span class="caption__fig">Fig. 1</span>
+            <span>Sala e quinta vetrata nello stato attuale. Fotografia RE/MAX, F01.</span>
+          </figcaption>
+        </figure>
+
+        <article class="decision" aria-labelledby="decisione-titolo">
+          <p class="eyebrow">La proposta consigliata</p>
+          <h2 class="decision__title" id="decisione-titolo">Casa con guardaroba</h2>
+          <p class="decision__lede">È la prima proposta che porterei in visita. Conserva la zona giorno, la matrimoniale sulla piazza e un solo bagno sugli impianti esistenti.</p>
+          <ol class="points"><li><strong>112 m² utili dichiarati.</strong><span>Il ricalcolo della pianta dà circa 113 m². L’annuncio parla di 157 m² calpestabili.</span></li><li><strong>Una camera sul fronte.</strong><span>La matrimoniale occupa il vano rettangolare da circa 21 m². Nel cuneo ci sono solo armadi bassi.</span></li><li><strong>Se vi servono due camere, guardate B.</strong><span>La singola va sul retro. Prima servono verifiche di luce, aerazione e privacy anche con il giardino d’inverno chiuso.</span></li></ol>
+          <div class="condition" role="note" aria-label="Ipotesi condizionata">
+            <p class="eyebrow">Ipotesi condizionata</p>
+            <p><strong>Giardino d’inverno.</strong> Resta una possibilità subordinata all’esito delle verifiche: non rientra nella proposta e non va considerato acquisito.</p>
+          </div>
+          <p class="decision__actions">
+            <a class="btn btn--ink" href="/decisioni/atlante.html?variante=A">Visita la proposta A</a>
+            <a class="btn btn--line" href="/decisioni/Verifica_R04.pdf">Verifica R04 <span class="btn__kind">PDF</span></a>
+          </p>
+          <p class="decision__status" data-hero-status role="status">Lettura dei file di verifica…</p>
+        </article>
+      </section>
+
+      <section class="section wrap" id="confronto" aria-labelledby="confronto-titolo">
+        <header class="section__head">
+          
+          <h2 class="section__title" id="confronto-titolo">Cinque modi di abitare la casa</h2>
+          <p class="section__lede">Scegli una proposta per vedere la distribuzione e il render. Le righe della tabella mostrano cosa cambia per camere, giardino e uso dell’altezza.</p>
+        </header>
+
+        <p class="state" data-state="confronto">Lettura di case.json…</p>
+
+        <ul class="cards" data-cards aria-label="Proposte attive" hidden></ul>
+
+        <div class="table-wrap" data-compare-wrap hidden>
+          <table class="compare" data-compare>
+            <caption class="sr-only">Confronto tra le proposte attive. La colonna evidenziata è la proposta selezionata.</caption>
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <article class="detail" data-detail aria-labelledby="dettaglio-titolo" hidden>
+          <figure class="plate">
+            <div class="plate__frame">
+              <img class="plate__base" data-detail-photo alt="" decoding="async" hidden>
+              <img class="plate__overlay" data-overlay alt="Pianta della proposta sul disegno catastale" hidden>
+              <p class="plate__empty" data-detail-nophoto hidden></p>
+            </div>
+            <figcaption class="plate__caption">
+              <button type="button" class="btn btn--line btn--small toggle" aria-pressed="false" data-overlay-toggle>Guarda la pianta</button>
+              <label class="range" data-overlay-range hidden>Opacità <input type="range" min="10" max="100" step="5" value="70" data-overlay-opacity></label>
+              <a href="/decisioni/riscontro.svg">Apri riscontro.svg</a>
+              <span class="plate__note" data-overlay-msg>Tavola separata, in scala grafica.</span>
+            </figcaption>
+          </figure>
+          <div class="detail__text">
+            <p class="eyebrow" data-detail-eyebrow></p>
+            <h3 class="detail__title" id="dettaglio-titolo" data-detail-title></h3>
+            <p class="detail__status" data-detail-status></p>
+            <p class="detail__summary" data-detail-summary></p>
+            <div class="detail__why">
+              <p class="eyebrow eyebrow--muted">Perché</p>
+              <p data-detail-reason></p>
+            </div>
+            <p class="detail__links">
+              <a class="btn btn--ink" data-detail-link href="/decisioni/atlante.html?variante=A">Apri il modello nell’atlante</a>
+              <a class="btn btn--line" href="/decisioni/Verifica_R04.pdf">Verifica R04 <span class="btn__kind">PDF</span></a>
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section wrap" id="aree" aria-labelledby="aree-titolo">
+        <header class="section__head">
+          
+          <h2 class="section__title" id="aree-titolo">Aree dei vani</h2>
+          <p class="section__lede">Superfici ricalcolate sul disegno catastale 1:200. La scala e gli esterni si leggono separatamente dai vani interni. Le larghezze indicate sono gli ingombri massimi del vano.</p>
+        </header>
+        <p class="state" data-state="aree">Lettura di audit.json…</p>
+        <div class="table-wrap" data-rooms-wrap hidden>
+          <table class="data data--stack" data-rooms>
+            <caption class="sr-only">Aree dei vani secondo audit.json</caption>
+            <thead>
+              <tr><th scope="col">Vano</th><th scope="col">Superficie</th><th scope="col">Luce</th><th scope="col">Note</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section wrap" id="riscontro" aria-labelledby="riscontro-titolo">
+        <header class="section__head">
+          
+          <h2 class="section__title" id="riscontro-titolo">Documento e disegno</h2>
+          <p class="section__lede">Per ogni voce, il valore del documento accanto a quello del disegno. Dove non coincidono è segnalato; qui nessun valore viene corretto.</p>
+        </header>
+        <div class="riscontro">
+          <div class="riscontro__units">
+            <p class="state" data-state="unita">Lettura di audit.json…</p>
+            <p class="tally" data-units-tally hidden></p>
+            <div class="table-wrap" data-units-wrap hidden>
+              <table class="data data--stack" data-units>
+                <caption class="sr-only">Confronto tra documento e disegno secondo audit.json</caption>
+                <thead>
+                  <tr><th scope="col">Voce</th><th scope="col">Documento</th><th scope="col">Disegno</th><th scope="col">Esito</th><th scope="col">Note</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="riscontro__findings">
+            <h3 class="sub">Rilievi della verifica</h3>
+            <p class="state" data-state="rilievi">Lettura di audit.json…</p>
+            <ol class="findings" data-findings hidden></ol>
+            <p class="sub__link"><a href="/decisioni/Verifica_R04.pdf">Leggi la Verifica R04 completa (PDF)</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap" id="fonti" aria-labelledby="fonti-titolo">
+        <header class="section__head">
+          <p class="section__num" aria-hidden="true">04</p>
+          <h2 class="section__title" id="fonti-titolo">Fonti e verifiche</h2>
+          <p class="section__lede">Ciò che questa pagina mostra viene da questi file. Se un file non è raggiungibile, la sezione relativa resta vuota: nessun dato viene sostituito.</p>
+        </header>
+        <ul class="sources">
+          <li><a href="/decisioni/Verifica_R04.pdf"><span class="sources__name">Verifica R04</span><span class="sources__kind">PDF</span><span class="sources__desc">Il documento di verifica su cui poggia la decisione.</span></a></li>
+          <li><a href="/decisioni/atlante.html?variante=A"><span class="sources__name">Atlante delle varianti</span><span class="sources__kind">Modelli</span><span class="sources__desc">I modelli le cinque alternative; si apre sulla variante A.</span></a></li>
+          <li><a href="/decisioni/riscontro.svg"><span class="sources__name">Riscontro grafico</span><span class="sources__kind">SVG</span><span class="sources__desc">Sovrapposizione tra documento e disegno.</span></a></li>
+          <li><a href="/decisioni/audit.json"><span class="sources__name">audit.json</span><span class="sources__kind">Dati</span><span class="sources__desc">Voci confrontate, aree dei vani, rilievi della verifica.</span></a></li>
+          <li><a href="/decisioni/case.json"><span class="sources__name">case.json</span><span class="sources__kind">Dati</span><span class="sources__desc">Le proposte attive, i loro stati e le immagini.</span></a></li>
+          <li class="is-archive"><a href="/archivio-progetto/"><span class="sources__name">Archivio di progetto</span><span class="sources__kind">Storico</span><span class="sources__desc">Versioni precedenti, consultabili come storia del progetto. Non sostituiscono questa decisione.</span></a></li>
+        </ul>
+        <details class="source-register"><summary>Annunci e fotografie consultati</summary><p><a href="https://domus-nova.remax.it/vendita-appartamento/san-gregorio-di-catania/centro-32311140-23">Scheda RE/MAX · MLS 32311140-23</a> · 165 m² di offerta; terrazzo circa 12 m²; garage venduto separatamente, 66 m². Foto F01–F15.</p><p><a href="https://www.casa.it/immobili/54713813/">Casa.it · 54713813</a> · 15 foto; stessa agenzia e descrizione. Volte oltre 4 m; nessuna quota per singolo vano.</p><p><a href="https://www.idealista.it/immobile/36796296/">Idealista · 36796296</a> · Riporta 165 m² commerciali e 157 calpestabili: 45 in più dei 112 utili DOCFA. Foto segnalata come modificata IA, esclusa dalla misura.</p><p><a href="https://www.trovacasa.it/annunci/ct-tc-59944-73068047">TrovaCasa · rif. 2347</a> · Replica della medesima inserzione. I dati ripetuti hanno un solo emittente.</p><p><a href="https://www.remax.it/trova/immobile/Casa-Indipendente-In-Vendita-San-Gregorio-Di-Catania_32311140-14">RE/MAX · MLS 32311140-14</a> · Vendita storica dell’intero palazzo. Casa circa 170 m², terrazzo 20, garage 70, bottega distinta.</p><p><a href="https://www.idealista.it/immobile/35016491/">Idealista · palazzo intero, 36 foto</a> · Vecchio lotto con negozio. L’inserzione segnala un’immagine modificata con IA; 340 m² comprendono più unità.</p><p><a href="https://www.casa.it/immobili/53443694/">Casa.it · palazzo intero, 30 foto</a> · Serie storica indicizzata di 30 foto; accesso integrale non verificato.</p><p><a href="https://www.immobiliare.it/annunci/127165429/">Immobiliare.it · rif. 127165429</a> · Scheda storica del lotto da 340 m². Il pozzo è descritto dall’agenzia, da localizzare in visita.</p></details><aside class="notice" aria-label="Limiti di questa pagina">
+          <p><strong>Prima del compromesso.</strong> Far rilevare le superfici e le altezze stanza per stanza. Chiedere un parere scritto sulla chiusura del terrazzo e verificare illuminazione e aerazione prima di usarla per valutare la casa.</p>
+        </aside>
+      </section>
+    </div>
+
+    <!-- Vista: Altre case (solo nel browser) -->
+    <div class="view" data-view="altre" hidden>
+      <section class="altre wrap" id="altre-case" aria-labelledby="altre-titolo">
+        <header class="altre__head">
+          <p class="kicker">Vista personale · solo su questo dispositivo</p>
+          <h1 class="altre__title" id="altre-titolo" tabindex="-1">Altre case</h1>
+          <p class="altre__lede">Metti Casa Margherita accanto alle abitazioni che stai valutando, con gli stessi criteri. I dati restano in questo browser (localStorage): nulla viene inviato, caricato o pubblicato.</p>
+          <p class="altre__back"><a href="#casa">← Torna alla decisione</a></p>
+        </header>
+
+        <div class="altre__grid">
+          <form class="house-form" data-house-form novalidate aria-labelledby="form-titolo">
+            <h2 class="house-form__title" id="form-titolo" data-form-title>Aggiungi una casa</h2>
+
+            <div class="field">
+              <label for="h-name">Nome <span class="field__req">obbligatorio</span></label>
+              <input id="h-name" name="name" type="text" maxlength="80" autocomplete="off" required aria-describedby="h-name-err">
+              <p class="field__err" id="h-name-err" data-err="name"></p>
+            </div>
+
+            <div class="field">
+              <label for="h-place">Località</label>
+              <input id="h-place" name="place" type="text" maxlength="80" autocomplete="off">
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="h-area">Superficie utile dichiarata <span class="field__unit">m²</span></label>
+                <input id="h-area" name="area" type="text" inputmode="decimal" autocomplete="off" aria-describedby="h-area-hint h-area-err">
+                <p class="field__hint" id="h-area-hint">Come dichiarata da annuncio o venditore.</p>
+                <p class="field__err" id="h-area-err" data-err="area"></p>
+              </div>
+              <div class="field">
+                <label for="h-rooms">Camere reali</label>
+                <input id="h-rooms" name="rooms" type="text" inputmode="numeric" autocomplete="off" aria-describedby="h-rooms-hint h-rooms-err">
+                <p class="field__hint" id="h-rooms-hint">Solo camere vere, non studi o ripostigli.</p>
+                <p class="field__err" id="h-rooms-err" data-err="rooms"></p>
+              </div>
+            </div>
+
+            <fieldset class="field field--choice">
+              <legend>Garage</legend>
+              <div class="choice">
+                <label><input type="radio" name="garage" value="si"> Sì</label>
+                <label><input type="radio" name="garage" value="no"> No</label>
+                <label><input type="radio" name="garage" value="" checked> Non so</label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="h-notes">Note</label>
+              <textarea id="h-notes" name="notes" rows="4" maxlength="600"></textarea>
+            </div>
+
+            <div class="house-form__actions">
+              <button type="submit" class="btn btn--ink" data-submit>Aggiungi al confronto</button>
+              <button type="button" class="btn btn--line" data-cancel hidden>Annulla modifica</button>
+            </div>
+            <p class="house-form__msg" data-form-msg role="status"></p>
+          </form>
+
+          <div class="houses">
+            <div class="houses__bar">
+              <h2 class="houses__title">Confronto</h2>
+              <div class="houses__tools" data-tools hidden>
+                <label for="h-sort">Ordina per</label>
+                <select id="h-sort" data-sort>
+                  <option value="insert">Ordine di inserimento</option>
+                  <option value="area">Superficie dichiarata, dalla maggiore</option>
+                  <option value="rooms">Camere reali, dalle più numerose</option>
+                  <option value="name">Nome, dalla A alla Z</option>
+                </select>
+                <button type="button" class="btn btn--line btn--small btn--danger" data-clear>Rimuovi tutte</button>
+              </div>
+            </div>
+
+            <p class="storage-warn" data-storage-warn hidden>Questo browser non permette di salvare dati locali: le case inserite resteranno solo finché la pagina è aperta.</p>
+
+            <div class="table-wrap">
+              <table class="data data--houses">
+                <caption class="sr-only">Casa Margherita e le altre case inserite in questo browser</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Casa</th>
+                    <th scope="col">Località</th>
+                    <th scope="col">Superficie utile dichiarata</th>
+                    <th scope="col">Camere reali</th>
+                    <th scope="col">Garage</th>
+                    <th scope="col">Note</th>
+                    <th scope="col"><span class="sr-only">Azioni</span></th>
+                  </tr>
+                </thead>
+                <tbody data-houses></tbody>
+              </table>
+            </div>
+
+            <div class="empty" data-empty>
+              <p class="empty__title">Nessuna casa inserita.</p>
+              <p>Aggiungi le abitazioni che stai valutando: qui compare solo ciò che scrivi tu. Puoi allegare un PDF o una foto della pianta a ciascuna scheda.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner wrap">
+      <p class="footer__brand"><span class="brand__mark">ARCHAI</span> <span class="brand__sep" aria-hidden="true">/</span> <span class="brand__name">Casa Margherita</span></p>
+      <p>Edizione R04 · Misure di studio. Le case e le planimetrie che aggiungi restano in questo browser.</p>
+      <p><a href="/decisioni/Verifica_R04.pdf">Verifica R04</a> · <a href="/decisioni/atlante.html?variante=A">Atlante</a> · <a href="/archivio-progetto/">Archivio di progetto (storico)</a></p>
+    </div>
+  <p><a href="https://github.com/Giulianomlodi/casa-margherita-22/releases/download/r04-verificata/Casa_Margherita_R04.zip">Scarica l’edizione R04 con CAD, IFC e scene Blender</a> · <a href="/decisioni/atlante.html?variante=G">Garage attuale</a> · <a href="/decisioni/atlante.html?variante=G2">Garage con auto e banco</a> · <a href="/decisioni/atlante.html?variante=T">Stato attuale</a> <button id="originali" hidden>Fonti originali</button></p></footer><script src="/app.js"></script>
+</body>
+</html>
