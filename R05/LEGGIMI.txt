@@ -1,0 +1,2 @@
+CASA MARGHERITA · R05
+F – due singole su soppalchi con locali utilizzabili sotto. L – due singole su basi chiuse. Aprire due-camere/Due_camere_in_quota.pdf per le tavole. Modelli metrici nei formati .blend, .glb e .ifc. Piante e sezioni .svg e .dxf. Per la visita web offline, dalla cartella estratta avviare python -m http.server 8000 e aprire http://localhost:8000/due-camere/. Foto, dossier e proposte precedenti sono al sito pubblico.

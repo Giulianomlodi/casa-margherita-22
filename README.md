@@ -1,5 +1,9 @@
 # Casa Margherita 22
 
+## Due camere al piano alto · R05
+
+[Apri le due camere e le sezioni](https://casa-margherita-archai.netlify.app/due-camere/). Due studi condizionati, ciascuno con camera singola sopra il fronte e sopra il retro, due scale, viste sezionate, file CAD, IFC e Blender. La proposta F supera lo spazio verticale disponibile a 4,20 m locali; L ricava contenimento sotto e richiede anche verifica di luce e disciplina applicabile.
+
 ## Revisione R04
 
 [Decisione e confronto tra le case](https://casa-margherita-archai.netlify.app/) · [Quaderno metrico R04](https://casa-margherita-archai.netlify.app/decisioni/Verifica_R04.pdf) · [Visita 3D ricalcolata](https://casa-margherita-archai.netlify.app/decisioni/atlante.html?variante=A) · [Scarica la release R04](https://github.com/Giulianomlodi/casa-margherita-22/releases/tag/r04-verificata)

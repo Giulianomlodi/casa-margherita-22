@@ -65,6 +65,30 @@
           "id": "E",
           "link": "/decisioni/atlante.html?variante=E",
           "photo": "/decisioni/E-fronte.webp"
+        },
+        {
+          "id": "F",
+          "title": "Due camere su soppalchi",
+          "summary": "Una singola sopra il fronte, una sopra il salone; la matrimoniale resta al piano principale. Due scale autonome.",
+          "status": "Incompatibile con 4,20 m locali",
+          "rooms": "2 singole alte + matrimoniale sotto, solo come prova",
+          "high": "Quota +2,92 m. A H 4,20 restano 1,28 m sopra.",
+          "reason": "Il solo impalcato supera un terzo del vano frontale. Luce diretta e altezze per il pernottamento restano da dimostrare.",
+          "garden": "Verificare la finestra del retro con il terrazzo chiuso.",
+          "photo": "/due-camere/F-insieme.webp",
+          "link": "/due-camere/?variante=F"
+        },
+        {
+          "id": "L",
+          "title": "Due camere su basi chiuse",
+          "summary": "Singola sulla piazza e singola sul retro, entrambe a +1,08 m, con stivaggio sotto. Cuneo a guardaroba.",
+          "status": "Prima sezione da misurare per avere due singole alte",
+          "rooms": "2 singole rialzate in sostituzione della matrimoniale",
+          "high": "Quota +1,08 m. Sotto 0,90 m di contenimento, sopra 3,12 m se H = 4,20.",
+          "reason": "Sacrifica il pavimento sottostante. Sul fronte l’apertura diretta verso l’esterno è da risolvere. Verificare finestre, rampe e qualificazione comunale.",
+          "garden": "Verificare la finestra del retro con il terrazzo chiuso.",
+          "photo": "/due-camere/L-insieme.webp",
+          "link": "/due-camere/?variante=L"
         }
       ],
       "area": "112 m² utili dichiarati",

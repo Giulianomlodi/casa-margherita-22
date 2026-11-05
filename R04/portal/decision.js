@@ -31,7 +31,7 @@ function planButtons(id){
     overlay: '/decisioni/riscontro.svg'
   };
   const STORE_KEY = 'archai:casa-margherita:altre-case:v1';
-  const LETTERS = ['A', 'B', 'C', 'D', 'E'];
+  const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'L'];
   const CRITERIA = [
     ['status', 'Stato'],
     ['rooms', 'Camere'],
@@ -169,7 +169,7 @@ function planButtons(id){
   /* ---------- proposte A/B/C ---------- */
 
   function letterOf(opt) {
-    const m = str(opt && opt.id).toUpperCase().match(/(?:^|[^A-Z])([ABCDE])$/);
+    const m = str(opt && opt.id).toUpperCase().match(/(?:^|[^A-Z])([ABCDEFL])$/);
     return m ? m[1] : null;
   }
 
@@ -398,7 +398,7 @@ function planButtons(id){
       btn.setAttribute('aria-pressed',String(on)); btn.textContent=on?'Guarda il render':'Guarda la pianta';
       const opt=state.options.find(o=>o.link===new URL($('[data-detail-link]').href).pathname+new URL($('[data-detail-link]').href).search);
       const id=opt?.letter||new URL($('[data-detail-link]').href).searchParams.get('variante')||'A';
-      layer.src='/decisioni/'+id+'-pianta.svg';layer.hidden=!on;img.hidden=on;
+      layer.src=['F','L'].includes(id)?'/due-camere/'+id+'-L1.svg':'/decisioni/'+id+'-pianta.svg';layer.hidden=!on;img.hidden=on;
       $('[data-overlay-msg]').textContent=on?'Pianta arredata ricavata dalla stessa geometria del modello.':'Vista calcolata in Blender.';
     });
   }

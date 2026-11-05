@@ -54,6 +54,7 @@ def copy_site(staging):
     for filename in ("index.html","decision.js","style.css"):
         shutil.copyfile(project/"portal"/filename,staging/filename)
     shutil.copytree(project/"decisioni",staging/"decisioni")
+    shutil.copytree(ROOT/"R05"/"due-camere", staging/"due-camere")
 
 
 
